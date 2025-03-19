@@ -35,7 +35,7 @@ void printVariadic(Args... args) {
 // init op (a op (b op c))
 
 
-template <typename ...T>
+template <typename ...T> // for type always use ...T ie ... first
 int printVal(T...args)
 {
     return (args+ ...);
@@ -74,11 +74,27 @@ void printCout(Args... args) {
 
 }
 
+template <typename... Args>
+void printCoutRightFoldOnly(Args... args) {
+    (std::cout << ... << args);
+
+}
 int main()
 {
-    std::cout << printVal(1,2,3,4)<<"\n";
-    std::cout << printValInit(1,2,3,4) << "\n";
-    std::cout << printValInitBegDefaultValue(1,2,3,4) << "\n";
-    std::cout << printValRight(1,2,3,10) << "\n";
-    printCout(100, 200, 300, 400); std::cout << "\n";
+    //Following are some cases
+    std::cout << printVal(1,2,3,4)<<"\n";//left fold
+    std::cout << printValInit(1,2,3,4) << "\n";//with init value left
+    std::cout << printValInitBegDefaultValue(1,2,3,4) << "\n";//with default value to add in the beginning
+    std::cout << printValRight(1,2,3,10) << "\n";// right fold
+    printCout(100, 200, 300, 400); std::cout << "\n";// cout with ...
+    printCoutRightFoldOnly(1000, 2000, 3000, 4000); std::cout << "\n";// cout with right fold
 }
+/*
+output:
+        10
+        110
+        130
+        16
+        100200300400
+        1000200030004000
+*/
