@@ -30,7 +30,6 @@ void process(int && a)
 // }
 
 
-
 int main()
 {
 
