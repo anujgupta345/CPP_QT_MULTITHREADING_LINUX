@@ -8,7 +8,7 @@ int main() {
 
     pid_t pid = fork(); // Create child process
 
-    if (pid == 0) { // Child Process (Reader)
+    if (0 == pid) { // Child Process (Reader)
         close(fd[1]); // Close unused write end
         char buffer[100];
         read(fd[0], buffer, sizeof(buffer)); // Read from pipe
