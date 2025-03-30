@@ -14,6 +14,7 @@ SOURCES += \
     Shared_Variable.cpp \
     ipc.cpp \
     main.cpp \
+    messagequeuw.cpp \
     pipe.cpp \
     widget.cpp \
     worker.cpp
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     Shared_Variable.h \
     ipc.h \
+    messagequeuw.h \
     pipe.h \
     widget.h \
     worker.h
