@@ -15,7 +15,7 @@ Worker::Worker(QObject *parent)
 {}
 
 void Worker::runProcess() {
-    qDebug() << "Process started in worker thread!!!!";
+    qDebug() << "Process started in worker thread!!!!!!";
 
     pid_t pid = fork();
     if (pid < 0) {
