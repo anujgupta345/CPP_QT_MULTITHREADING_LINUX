@@ -40,7 +40,7 @@ int main() {
 
     std::cout << "Message received: " << buffer << std::endl;
 
-    // 5️⃣ Cleanup
+    // 5️⃣ Cleanup//
     free(buffer);
     mq_close(mq);
     mq_unlink(MQ_NAME);
